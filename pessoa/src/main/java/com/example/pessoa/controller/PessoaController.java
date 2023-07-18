@@ -35,9 +35,6 @@ public class PessoaController {
     public String cadastroPessoa(DadosCadastros dados){
         Pessoa pessoa = new Pessoa(dados);
         pessoas.add(pessoa);
-
-        System.out.println(pessoas);
-
         return "redirect:/pessoa";
     }
 

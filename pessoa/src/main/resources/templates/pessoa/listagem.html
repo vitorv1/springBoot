@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
 <head>
-    <meta charset="UTF-8">
     <title>Lista pessoas</title>
 </head>
 <body>
 
+<div layout:fragment="conteudo">
 <h1>Lista pessoas</h1>
 
 <table>
@@ -26,5 +28,6 @@
     </tr>
     </tbody>
 </table>
+</div>
 </body>
 </html>

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://thymeleaf.org"
+      layout:decorate="~{template.html}"
+>
 <head>
-    <meta charset="UTF-8">
     <title>Cadastro pessoa</title>
 </head>
 <body>
+<div layout:fragment="conteudo">
 <h1>Cadastro pessoa</h1>
 
-<form method="post">
+<form method="post" action="/pessoa">
     <label for="nome"> Nome:</label>
     <input id="nome" name="nome">
     <br/>
@@ -27,5 +31,6 @@
     <input type="submit" value="Cadastrar">
 
 </form>
+</div>
 </body>
 </html>

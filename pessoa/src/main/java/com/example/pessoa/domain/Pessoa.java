@@ -10,6 +10,31 @@ public class Pessoa {
     private String sexo;
     private String profissao;
 
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", sexo='" + sexo + '\'' +
+                ", profissao='" + profissao + '\'' +
+                '}';
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+    public Integer getIdade() {
+        return idade;
+    }
+    public String getSexo() {
+        return sexo;
+    }
+    public String getProfissao() {
+        return profissao;
+    }
+
     public Pessoa(){
     }
 
