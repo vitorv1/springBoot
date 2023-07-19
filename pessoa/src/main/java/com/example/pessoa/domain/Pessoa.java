@@ -1,9 +1,17 @@
 package com.example.pessoa.domain;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name="pessoa")
 public class Pessoa {
 
+    public Long getId() {
+        return id;
+    }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private Integer idade;
@@ -39,6 +47,13 @@ public class Pessoa {
     }
 
     public Pessoa(DadosCadastros dados){
+        this.nome = dados.nome();
+        this.idade = dados.idade();
+        this.sexo = dados.sexo();
+        this.profissao = dados.profissao();
+    }
+
+    public void atualizaDados(DadosAlteraPessoa dados){
         this.nome = dados.nome();
         this.idade = dados.idade();
         this.sexo = dados.sexo();

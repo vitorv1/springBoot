@@ -12,21 +12,32 @@
 <h1>Cadastro pessoa</h1>
 
 <form method="post" action="/pessoa">
+    <input type="hidden" name="_method" value="put" th:if="${filme != null}">
+    <input type="hidden" name="id" th:value="${filme?.id}">
+
+    <div>
     <label for="nome"> Nome:</label>
     <input id="nome" name="nome">
     <br/>
+    </div>
 
+    <div>
     <label for="idade"> Idade:</label>
     <input id="idade" name="idade">
     <br/>
+    </div>
 
+    <div>
     <label for="sexo"> Sexo:</label>
     <input id="sexo" name="sexo">
     <br/>
+    </div>
 
+    <div>
     <label for="profissao"> Profissão:</label>
     <input id="profissao" name="profissao">
     <br/>
+    </div>
 
     <input type="submit" value="Cadastrar">
 

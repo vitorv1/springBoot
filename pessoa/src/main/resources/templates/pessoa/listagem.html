@@ -9,8 +9,10 @@
 
 <div layout:fragment="conteudo">
 <h1>Lista pessoas</h1>
+    <a href="/pessoa/cadastro">Novo</a>
 
-<table>
+
+    <table>
     <thead>
     <tr>
         <th>NOME</th>
@@ -25,6 +27,15 @@
         <td th:text="${pessoa.idade}"></td>
         <td th:text="${pessoa.sexo}"></td>
         <td th:text="${pessoa.profissao}"></td>
+        <td>
+            <a th:href="@{/pessoa/cadastro?id={id}(id=${pessoa.id})}">Editar</a>
+            <form action="/pessoa" method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="id" th:value="${pessoa.id}">
+
+                <input type="submit" value="Excluir">
+            </form>
+        </td>
     </tr>
     </tbody>
 </table>
