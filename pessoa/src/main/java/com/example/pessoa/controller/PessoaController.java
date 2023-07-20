@@ -53,7 +53,6 @@ public class PessoaController {
     @DeleteMapping
     @Transactional
     public String deletaPessoa(Long id){
-        Pessoa pessoa = repository.getReferenceById(id);
         repository.deleteById(id);
         return "redirect:/pessoa";
     }
