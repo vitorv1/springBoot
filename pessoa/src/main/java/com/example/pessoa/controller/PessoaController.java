@@ -23,7 +23,7 @@ public class PessoaController {
     public String carregaFomulario(Long id, Model model){
         if(id != null) {
             Pessoa pessoa = repository.getReferenceById(id);
-            model.addAttribute("lista", pessoa);
+            model.addAttribute("pessoa", pessoa);
         }
         return "pessoa/cadastro";
     }

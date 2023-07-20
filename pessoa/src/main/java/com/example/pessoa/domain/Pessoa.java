@@ -6,10 +6,6 @@ import jakarta.persistence.*;
 @Table(name="pessoa")
 public class Pessoa {
 
-    public Long getId() {
-        return id;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -42,6 +38,7 @@ public class Pessoa {
     public String getProfissao() {
         return profissao;
     }
+    public Long getId() {return id;}
 
     public Pessoa(){
     }
