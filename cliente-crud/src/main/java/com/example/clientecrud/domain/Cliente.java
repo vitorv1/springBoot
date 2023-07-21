@@ -1,12 +1,21 @@
 package com.example.clientecrud.domain;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="clientes" )
 public class Cliente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String cpf;
     private String numero_telefone;
     private String email;
+
+    public Cliente(){}
 
 
 
