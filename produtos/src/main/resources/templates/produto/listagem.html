@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}"
+>
 <head>
-    <meta charset="UTF-8">
     <title>Lista de produtos</title>
 </head>
 <body>
+<div layout:fragment="conteudo">
 <h1>Lista de produtos</h1>
-<table>
+  <a href="/produto/cadastro">Novo</a>
+
+  <table>
   <thead>
   <tr>
     <th>CÓDIGO</th>
     <th>NOME</th>
     <th>MARCA</th>
     <th>VALOR</th>
+    <th>AÇÕES</th>
   </tr>
   </thead>
   <tbody>
@@ -21,8 +27,17 @@
     <td th:text="${produto.nome}"></td>
     <td th:text="${produto.marca}"></td>
     <td th:text="${produto.valor}"></td>
+    <td>
+      <a th:href="@{/produto/cadastro?id={id}(id=${produto.id})}">Editar</a>
+      <form action="/produto" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" th:value="${produto.id}">
+        <input type="submit" value="Excluir">
+      </form>
+    </td>
   </tr>
   </tbody>
 </table>
+</div>
 </body>
 </html>

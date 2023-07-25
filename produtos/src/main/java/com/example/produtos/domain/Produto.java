@@ -19,6 +19,7 @@ public class Produto {
 
 
 
+
     public Produto(DadosCadastroProduto dados) {
         Random random = new Random();
         this.codigo = random.nextLong(3000);
@@ -36,6 +37,7 @@ public class Produto {
                 ", valor=" + valor +
                 '}';
     }
+    public Produto (){}
 
 
     public Long getCodigo() {
@@ -56,6 +58,12 @@ public class Produto {
 
     public double getValor() {
         return valor;
+    }
+
+    public void atualizaDados(DadosAlteraProduto dados){
+        this.nome = dados.nome();
+        this.marca = dados.marca();
+        this.valor = dados.valor();
     }
 
 
